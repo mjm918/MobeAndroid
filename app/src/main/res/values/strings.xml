@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Mobe</string>
+    <string name="logo_desc">Mobe LOGO</string>
+    <string name="loading">Loading…</string>
+    <string name="no_connection">No Internet Connection</string>
+    <string name="no_connection_msg">No internet connection detected or poor connectivity.Please check your connection</string>
+    <string name="connect">OK</string>
+    <string name="login">Sign in</string>
+    <string name="register">Sign up</string>
+    <string name="goregister">Not registered yet? Sign up here…</string>
+    <string name="gologin">Go To Sign in Page…</string>
+    <string name="confirm_exit">Exit?</string>
+    <string name="confirm_exit_msg">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="et_id">Email</string>
+    <string name="et_pass">Password</string>
+    <string name="et_fname">First Name</string>
+    <string name="et_lname">Last Name</string>
+    <string name="et_dob">Date of Birth</string>
+    <string name="manager">Yes, I am a Manager</string>
+</resources>

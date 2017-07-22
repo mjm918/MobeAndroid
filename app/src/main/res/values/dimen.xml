@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="circular">100dp</dimen>
+    <dimen name="logo_width">300dp</dimen>
+    <dimen name="logo_height">150dp</dimen>
+    <dimen name="bar_width">300dp</dimen>
+    <dimen name="bar_height">20dp</dimen>
+    <dimen name="loading">15sp</dimen>
+    <dimen name="tendp">10dp</dimen>
+    <dimen name="margin_def">50dp</dimen>
+    <dimen name="margin_splash">100dp</dimen>
+    <dimen name="et_tv_btn">300dp</dimen>
+    <dimen name="btnLogin">20sp</dimen>
+    <dimen name="btn">15sp</dimen>
+</resources>
