@@ -19,4 +19,21 @@
     <string name="et_lname">Last Name</string>
     <string name="et_dob">Date of Birth</string>
     <string name="manager">Yes, I am a Manager</string>
+    <string name="approve">Your account hasn\'t been approved yet. Please wait for the response from the office.\n Thank You.</string>
+    <string name="setup">Please wait\n While we are setting up your profile</string>
+    <string name="save">Save</string>
+    <string name="verify">Verify</string>
+    <string name="logout">Logout</string>
+    <string name="spinner">Please Select Your Department</string>
+
+    <!--warning-->
+    <string name="wardept">Once you save the department, you can\'t change later.</string>
+
+    <!--Label-->
+    <string name="hello">Hello, </string>
+    <string name="none">null</string>
+    <string name="gday">Good Day Manager ! Rate Now..</string>
+    <string name="dept">Please set your department</string>
+    <string name="pass">Change Password</string>
+
 </resources>

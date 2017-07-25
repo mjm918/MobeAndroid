@@ -23,7 +23,6 @@ import javax.net.ssl.SSLSocketFactory;
  */
 
 public class NoSSLv3SocketFactory extends SSLSocketFactory {
-
     private final SSLSocketFactory delegate;
 
     public NoSSLv3SocketFactory() {

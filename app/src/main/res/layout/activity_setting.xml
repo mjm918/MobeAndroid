@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:id="@+id/layout_setting"
+    tools:context="akash.com.mobe.SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/viewTop"/>
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/circular"
+            android:layout_height="@dimen/circular"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:mpb_progressStyle="circular"
+            app:mpb_indeterminateTint="@color/colorAccent"
+            app:mpb_progressTint = "@color/colorAccent"
+            android:visibility="gone"
+            style="@style/Widget.MaterialProgressBar.ProgressBar" />
+
+        <RelativeLayout
+            android:id="@+id/layout_hide"
+            android:layout_below="@+id/viewTop"
+            android:padding="@dimen/twdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dept"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/btnLogin"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <Spinner
+                android:padding="@dimen/tendp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_hello"
+                android:id="@+id/spinner"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/fifdp"
+                android:textAlignment="center"
+                android:prompt="@string/spinner"
+                android:spinnerMode="dropdown"/>
+
+            <Button
+                android:id="@+id/btn_dept"
+                android:layout_width="@dimen/et_tv_btn"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/spinner"
+                android:background="@color/colorPrimaryDark"
+                android:textSize="@dimen/btnLogin"
+                android:textColor="@color/colorAccent"
+                android:text="@string/save"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_pass"
+                android:layout_below="@+id/btn_dept"
+                android:layout_marginTop="@dimen/tendp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pass"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/btnLogin"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_pass"
+                android:textColorHint="@color/colorAccent"
+                android:hint="@string/et_pass"
+                android:gravity="center_horizontal"
+                android:layout_width="@dimen/logo_width"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_pass"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_pass"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorAccent" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_pass"
+                android:layout_width="@dimen/et_tv_btn"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/input_layout_pass"
+                android:background="@color/colorPrimaryDark"
+                android:textSize="@dimen/btnLogin"
+                android:textColor="@color/colorAccent"
+                android:text="@string/verify"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_alignParentBottom="true"
+                android:layout_width="@dimen/et_tv_btn"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimaryDark"
+                android:textSize="@dimen/btnLogin"
+                android:textColor="@color/colorAccent"
+                android:text="@string/logout"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

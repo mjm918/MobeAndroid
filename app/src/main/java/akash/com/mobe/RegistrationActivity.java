@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Objects;
 import akash.com.mobe.Helper.HTTPHelper;
-import akash.com.mobe.Helper.HashToSHA1;
+import akash.com.mobe.Helper.ConvertToHash;
 import akash.com.mobe.Helper.Helper;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
@@ -36,6 +36,7 @@ import static akash.com.mobe.Helper.Config.API_FAIL;
 import static akash.com.mobe.Helper.Config.API_INSERT_ERROR;
 import static akash.com.mobe.Helper.Config.API_REG_LINK;
 import static akash.com.mobe.Helper.Config.API_SUCCESS;
+import static akash.com.mobe.Helper.Config.MOBE_DOMAIN;
 import static akash.com.mobe.Helper.Config.SHARED_PREFERENCE;
 import static akash.com.mobe.Helper.Config.SP_KEY;
 import static akash.com.mobe.Helper.Config.SP_STATUS;
@@ -121,6 +122,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 btn_reg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         USER_FNAME = et_fname.getText().toString().trim();
                         USER_LNAME = et_lname.getText().toString().trim();
                         USER_DOB = et_dob.getText().toString().trim();
@@ -151,6 +153,12 @@ public class RegistrationActivity extends AppCompatActivity {
                             snackbar.show();
                             return;
                         }
+                        if(!USER_EMAIL.contains(MOBE_DOMAIN)){
+                            Snackbar snackbar = Snackbar
+                                    .make(coordinatorLayout, "Invalid ! Please Use Your Company Email Address", Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                            return;
+                        }
                         if(!validate(USER_EMAIL)){
                             Snackbar snackbar = Snackbar
                                     .make(coordinatorLayout, "Invalid ! Email Address is Empty", Snackbar.LENGTH_LONG);
@@ -164,7 +172,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             return;
                         }else{
                             try {
-                                USER_PASS = HashToSHA1.SHA1(USER_PASS);
+                                USER_PASS = ConvertToHash.SHA1(USER_PASS);
                             } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
                                 e.printStackTrace();
                             }
@@ -234,7 +242,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     }
                     case API_ERROR: {
                         Snackbar snackbar = Snackbar
-                                .make(coordinatorLayout, "API Error. Please contact back office", Snackbar.LENGTH_LONG);
+                                .make(coordinatorLayout, "API Error. Please contact the back office", Snackbar.LENGTH_LONG);
                         snackbar.show();
                         break;
                     }

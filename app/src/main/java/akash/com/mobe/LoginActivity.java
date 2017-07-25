@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 import akash.com.mobe.Helper.HTTPHelper;
-import akash.com.mobe.Helper.HashToSHA1;
+import akash.com.mobe.Helper.ConvertToHash;
 import akash.com.mobe.Helper.Helper;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        USER_EMAIL = et_id.getText().toString().toUpperCase().trim();
+                        USER_EMAIL = et_id.getText().toString().trim();
                         USER_PASSWORD = et_pass.getText().toString().trim();
 
                         if(!validate(USER_EMAIL)){
@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                             return;
                         }else{
                             try {
-                                USER_PASSWORD = HashToSHA1.SHA1(USER_PASSWORD);
+                                USER_PASSWORD = ConvertToHash.SHA1(USER_PASSWORD);
                             } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
                                 e.printStackTrace();
                             }
@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     case API_ERROR: {
                         Snackbar snackbar = Snackbar
-                                .make(coordinatorLayout, "API Error. Please contact back office", Snackbar.LENGTH_LONG);
+                                .make(coordinatorLayout, "API Error. Please contact the back office", Snackbar.LENGTH_LONG);
                         snackbar.show();
                         break;
                     }

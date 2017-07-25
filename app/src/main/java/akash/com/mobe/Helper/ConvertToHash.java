@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
  * Created by julfi on 23/07/2017.
  */
 
-public class HashToSHA1 {
+public class ConvertToHash {
     private static String convertToHex(byte[] data) {
         StringBuilder buf = new StringBuilder();
         for (byte b : data) {
