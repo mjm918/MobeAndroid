@@ -57,6 +57,17 @@
                 android:text="@string/approve"
                 android:textColor="@color/text"/>
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_noemp"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/btn"
+                android:layout_centerInParent="true"
+                android:text="@string/noemp"
+                android:textColor="@color/text"/>
+
             <ImageView
                 android:visibility="gone"
                 android:id="@+id/iv_approve"
@@ -108,6 +119,76 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/tv_gd"
                     android:layout_marginTop="@dimen/twdp"/>
+
+                <ListView
+                    android:layout_marginTop="@dimen/fifdp"
+                    android:layout_below="@+id/tv_gd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lv_emp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:background="#80000000"
+                android:id="@+id/layout_emo"
+                android:gravity="center"
+                android:padding="@dimen/twdp"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/emo_happy"
+                    android:background="@drawable/happy"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:contentDescription="@string/logo_desc" />
+                <ImageButton
+                    android:layout_marginStart="@dimen/twdp"
+                    android:id="@+id/emo_conf"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:layout_toEndOf="@+id/emo_happy"
+                    android:background="@drawable/confident"
+                    android:contentDescription="@string/logo_desc" />
+                <ImageButton
+                    android:layout_marginStart="@dimen/twdp"
+                    android:id="@+id/emo_relax"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:layout_toEndOf="@id/emo_conf"
+                    android:background="@drawable/relax"
+                    android:contentDescription="@string/logo_desc" />
+                <ImageButton
+                    android:layout_marginTop="@dimen/twdp"
+                    android:id="@+id/emo_dis"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:layout_below="@+id/emo_happy"
+                    android:background="@drawable/disappointed"
+                    android:contentDescription="@string/logo_desc" />
+                <ImageButton
+                    android:layout_marginStart="@dimen/twdp"
+                    android:layout_marginTop="@dimen/twdp"
+                    android:id="@+id/emo_sad"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:layout_below="@+id/emo_conf"
+                    android:layout_toEndOf="@+id/emo_dis"
+                    android:background="@drawable/sad"
+                    android:contentDescription="@string/logo_desc" />
+                <ImageButton
+                    android:layout_marginStart="@dimen/twdp"
+                    android:layout_marginTop="@dimen/twdp"
+                    android:id="@+id/emo_angry"
+                    android:layout_width="@dimen/fifdp"
+                    android:layout_height="@dimen/fifdp"
+                    android:layout_below="@+id/emo_relax"
+                    android:layout_toEndOf="@+id/emo_sad"
+                    android:background="@drawable/angry"
+                    android:contentDescription="@string/logo_desc" />
 
             </RelativeLayout>
 

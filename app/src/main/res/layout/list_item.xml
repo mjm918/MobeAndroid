@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:padding="@dimen/tendp">
+
+    <RelativeLayout
+        android:baselineAligned="false"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_emp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/btn"
+            android:text="@string/logo_desc"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <TextView
+            android:id="@+id/tv_emp_email"
+            android:layout_below="@+id/tv_emp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/btn"
+            android:text="@string/logo_desc"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="@dimen/tendp" />
+
+        <TextView
+            android:id="@+id/tv_emp_date"
+            android:layout_below="@+id/tv_emp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/btn"
+            android:text="@string/logo_desc"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="@dimen/tendp"
+            android:layout_alignParentEnd="true"/>
+
+        <ImageView
+            android:id="@+id/iv_emo"
+            android:layout_width="@dimen/twdp"
+            android:layout_height="@dimen/twdp"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="@string/logo_desc" />
+
+    </RelativeLayout>
+</LinearLayout>

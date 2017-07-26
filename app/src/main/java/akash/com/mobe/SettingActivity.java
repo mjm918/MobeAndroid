@@ -150,6 +150,23 @@ public class SettingActivity extends AppCompatActivity implements AdapterView.On
                         }
                     }
                 });
+                btn_logout.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("PrivateResource")
+                    @Override
+                    public void onClick(View v) {
+
+                        SharedPreferences user = context.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE);
+
+                        if(user.edit().clear().commit()){
+                            Intent intent = new Intent(context, LoginActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            context.startActivity(intent);
+                            ((Activity) context).finish();
+                            ((Activity) context).overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_bottom);
+                            finish();
+                        }
+                    }
+                });
             }
         });
 

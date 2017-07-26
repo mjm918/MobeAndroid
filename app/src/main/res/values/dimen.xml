@@ -11,6 +11,7 @@
     <dimen name="bar_width">300dp</dimen>
     <dimen name="bar_height">20dp</dimen>
 
+    <dimen name="fivdp">5dp</dimen>
     <dimen name="tendp">10dp</dimen>
     <dimen name="twdp">20dp</dimen>
     <dimen name="fifdp">50dp</dimen>

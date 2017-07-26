@@ -20,6 +20,7 @@
     <string name="et_dob">Date of Birth</string>
     <string name="manager">Yes, I am a Manager</string>
     <string name="approve">Your account hasn\'t been approved yet. Please wait for the response from the office.\n Thank You.</string>
+    <string name="noemp">No Employee found under your department. Please set your department name from settings if you have not set your department yet.\n Thank You.</string>
     <string name="setup">Please wait\n While we are setting up your profile</string>
     <string name="save">Save</string>
     <string name="verify">Verify</string>
