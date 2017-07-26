@@ -308,17 +308,24 @@ public class ManagerActivity extends AppCompatActivity{
                         break;
                     }
                     case API_FAIL:{
-                        iv_approve.setVisibility(View.VISIBLE);
-                        tv_noemp.setVisibility(View.VISIBLE);
+                        if(!USER_APPROVE.equals(NOT_APPROVED)) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    tv_noemp.setVisibility(View.VISIBLE);
+                                }
+                            });
+                        }
                     }
                     default:
                         parseEmpData(s);
                         break;
                 }
                 if(userInfos == null){
+
                     EmployeeData(email);
 
-                    System.out.println(" GOING TO COLLECT EMPLOYEE DATA AGAIN ");
+                    System.out.println("GOING TO COLLECT EMPLOYEE DATA AGAIN ");
                 }
             }
 
@@ -452,9 +459,17 @@ public class ManagerActivity extends AppCompatActivity{
                 editor.putString(SP_DEPARTMENT, USER_DEPARTMENT);
                 editor.apply();
 
+                tv_name.setText(USER_FNAME+" "+USER_LNAME);
+
                 if(USER_APPROVE.equals(NOT_APPROVED)){
-                    tv_approve.setVisibility(View.VISIBLE);
-                    iv_approve.setVisibility(View.VISIBLE);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_approve.setVisibility(View.VISIBLE);
+                            iv_approve.setVisibility(View.VISIBLE);
+                            ShowProgress(false);
+                        }
+                    });
                 }else{
                     runOnUiThread(new Runnable() {
                         @Override

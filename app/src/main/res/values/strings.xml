@@ -36,5 +36,6 @@
     <string name="gday">Good Day Manager ! Rate Now..</string>
     <string name="dept">Please set your department</string>
     <string name="pass">Change Password</string>
+    <string name="empday">Here is your performance so far!</string>
 
 </resources>

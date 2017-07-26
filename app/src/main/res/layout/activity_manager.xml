@@ -193,13 +193,12 @@
             </RelativeLayout>
 
             <android.support.design.widget.FloatingActionButton
-                android:layout_marginBottom="@dimen/tendp"
                 android:layout_marginEnd="@dimen/tendp"
                 android:id="@+id/fab_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
                 android:src="@android:drawable/ic_menu_preferences" />
 
         </RelativeLayout>

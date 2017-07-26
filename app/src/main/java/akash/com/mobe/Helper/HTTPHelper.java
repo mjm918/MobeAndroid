@@ -33,6 +33,8 @@ public class HTTPHelper {
         try {
             url = new URL(requestURL);
 
+            TLSSocketFactory socketFactory = new TLSSocketFactory();
+
             SSLContext sslcontext = SSLContext.getInstance("TLSv1");
 
             sslcontext.init(null,
@@ -40,7 +42,7 @@ public class HTTPHelper {
                     null);
             SSLSocketFactory NoSSLv3Factory = new NoSSLv3SocketFactory(sslcontext.getSocketFactory());
 
-            HttpsURLConnection.setDefaultSSLSocketFactory(NoSSLv3Factory);
+            HttpsURLConnection.setDefaultSSLSocketFactory(socketFactory);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(TIMEOUT);
             conn.setConnectTimeout(TIMEOUT);

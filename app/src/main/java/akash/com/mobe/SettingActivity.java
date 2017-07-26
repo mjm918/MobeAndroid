@@ -263,6 +263,15 @@ public class SettingActivity extends AppCompatActivity implements AdapterView.On
                         Snackbar snackbar = Snackbar
                                 .make(coordinatorLayout, "Department successfully changed", Snackbar.LENGTH_LONG);
                         snackbar.show();
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                tv_hello.setVisibility(View.GONE);
+                                spinner.setVisibility(View.GONE);
+                                btn_dept.setVisibility(View.GONE);
+                            }
+                        });
                         break;
                     }
                     case API_INSERT_ERROR:{

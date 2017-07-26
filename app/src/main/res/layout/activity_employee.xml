@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_employee"
+    android:background="@color/colorPrimary"
     tools:context="akash.com.mobe.EmployeeActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/circular"
+            android:layout_height="@dimen/circular"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:mpb_progressStyle="circular"
+            app:mpb_indeterminateTint="@color/colorAccent"
+            app:mpb_progressTint = "@color/colorAccent"
+            android:visibility="gone"
+            style="@style/Widget.MaterialProgressBar.ProgressBar" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/loading"
+            android:text="@string/setup"
+            android:textAlignment="center"
+            android:layout_below="@+id/progress"
+            android:textColor="@color/colorAccent"
+            android:layout_centerHorizontal="true"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:id="@+id/layout_hide">
+
+            <RelativeLayout
+                android:padding="@dimen/twdp"
+                android:id="@+id/layout_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_approve"
+                    android:layout_width="@dimen/logo_width"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/btn"
+                    android:layout_centerInParent="true"
+                    android:text="@string/approve"
+                    android:textColor="@color/text"/>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_approve"
+                    android:layout_above="@+id/tv_approve"
+                    android:layout_centerInParent="true"
+                    android:layout_width="@dimen/logo_width"
+                    android:layout_height="@dimen/logo_height"
+                    app:srcCompat="@drawable/approve"
+                    android:contentDescription="@string/logo_desc"/>
+
+                <TextView
+                    android:id="@+id/tv_hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hello"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/btnLogin"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-smallcaps"/>
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_hello"
+                    android:textSize="@dimen/btnLogin"
+                    android:textColor="@color/text"
+                    android:text="@string/none"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_gd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/empday"
+                    android:layout_below="@+id/tv_name"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/btn"/>
+
+                <View
+                    android:layout_width="@dimen/logo_width"
+                    android:layout_height="2dp"
+                    android:background="@color/colorAccent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_gd"
+                    android:layout_marginTop="@dimen/twdp"/>
+
+                <ListView
+                    android:layout_marginTop="@dimen/fifdp"
+                    android:layout_below="@+id/tv_gd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lv_emp"/>
+
+            </RelativeLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_marginBottom="@dimen/tendp"
+                android:id="@+id/fab_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:src="@android:drawable/ic_menu_preferences" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
