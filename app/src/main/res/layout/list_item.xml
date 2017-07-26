@@ -52,7 +52,6 @@
             android:layout_width="@dimen/twdp"
             android:layout_height="@dimen/twdp"
             android:layout_alignParentEnd="true"
-            android:src="@android:drawable/ic_input_add"
             android:contentDescription="@string/logo_desc" />
 
     </RelativeLayout>

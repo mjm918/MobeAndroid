@@ -13,6 +13,7 @@ public class Config {
     public static final String API_PASS_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/chngPass.php";
     public static final String API_SVDEPT_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/saveDept.php";
     public static final String API_EMPDATA_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/empData.php";
+    public static final String API_VOTE_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/vote.php";
     public static final String MANAGER_ACTIVITY = "ManagerActivity";
     public static final String EMPLOYEE_ACTIVITY = "EmployeeActivity";
     public static final String ACTIVITY_TAG = "GoingToActivity";
@@ -20,7 +21,7 @@ public class Config {
     public static final String API_USER_INFO = "info";
     public static final String API_EMP_DATA = "emp";
     public static final String API_DATE = "date";
-    public static final String API_NAME = "name";
+    public static final String API_EMO = "emo";
     public static final String API_FNAME = "fname";
     public static final String API_LNAME = "lname";
     public static final String API_DOB = "dob";

@@ -17,6 +17,13 @@ import java.util.List;
 import akash.com.mobe.Constructor.UserInfo;
 import akash.com.mobe.R;
 
+import static akash.com.mobe.Helper.EmojiTag.E_ANGRY;
+import static akash.com.mobe.Helper.EmojiTag.E_CONF;
+import static akash.com.mobe.Helper.EmojiTag.E_DISAP;
+import static akash.com.mobe.Helper.EmojiTag.E_HAPPY;
+import static akash.com.mobe.Helper.EmojiTag.E_RELAX;
+import static akash.com.mobe.Helper.EmojiTag.E_SAD;
+
 /**
  * Created by julfi on 26/07/2017.
  */
@@ -28,6 +35,7 @@ public class EmpListAdapter extends BaseAdapter {
     private List<UserInfo> userInfos;
     private TextView tv_name,tv_email,tv_date;
     private ImageView iv_vote;
+    private int RESOURCE;
 
     public EmpListAdapter(Activity activity,List<UserInfo> userInfos){
         this.activity = activity;
@@ -75,6 +83,35 @@ public class EmpListAdapter extends BaseAdapter {
         tv_name.setText(info.getName());
         tv_email.setText(info.getEmail());
 
+        switch (info.getEmo()){
+            case E_ANGRY:
+                RESOURCE = R.drawable.angry;
+                break;
+            case E_CONF:
+                RESOURCE = R.drawable.confident;
+                break;
+            case E_DISAP:
+                RESOURCE = R.drawable.disappointed;
+                break;
+            case E_HAPPY:
+                RESOURCE = R.drawable.happy;
+                break;
+            case E_RELAX:
+                RESOURCE = R.drawable.relax;
+                break;
+            case E_SAD:
+                RESOURCE = R.drawable.sad;
+                break;
+            default:
+                RESOURCE = 0;
+                break;
+        }
+
+        if(RESOURCE == 0){
+            iv_vote.setBackgroundResource(R.drawable.vote);
+        }else{
+            iv_vote.setBackgroundResource(RESOURCE);
+        }
         return convertView;
     }
 }

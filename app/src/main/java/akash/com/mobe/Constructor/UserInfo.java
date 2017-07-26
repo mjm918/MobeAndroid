@@ -6,13 +6,13 @@ package akash.com.mobe.Constructor;
 
 public class UserInfo {
 
-    private String name,dob,approve,department,email;
+    private String name,dob,approve,department,email,emo;
 
     public UserInfo(){
 
     }
 
-    public UserInfo(String name,String dob,String approve,String department,String email){
+    public UserInfo(String name,String dob,String approve,String department,String email,String emo){
 
         super();
 
@@ -21,7 +21,16 @@ public class UserInfo {
         this.approve = approve;
         this.department = department;
         this.email = email;
+        this.emo = emo;
 
+    }
+
+    public String getEmo() {
+        return emo;
+    }
+
+    public void setEmo(String emo) {
+        this.emo = emo;
     }
 
     public String getName() {
