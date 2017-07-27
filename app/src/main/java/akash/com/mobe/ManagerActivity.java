@@ -28,11 +28,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import akash.com.mobe.Constructor.UserInfo;
 import akash.com.mobe.Helper.EmpListAdapter;
 import akash.com.mobe.Helper.HTTPHelper;
 import akash.com.mobe.Helper.Helper;
+import akash.com.mobe.Helper.SwipeDetector;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 import static akash.com.mobe.Helper.Config.ACTIVITY_TAG;
@@ -51,6 +53,7 @@ import static akash.com.mobe.Helper.Config.API_LNAME;
 import static akash.com.mobe.Helper.Config.API_SUCCESS;
 import static akash.com.mobe.Helper.Config.API_USER_INFO;
 import static akash.com.mobe.Helper.Config.API_VOTE_LINK;
+import static akash.com.mobe.Helper.Config.EMPLOYEE_ACTIVITY;
 import static akash.com.mobe.Helper.Config.MANAGER_ACTIVITY;
 import static akash.com.mobe.Helper.Config.NOT_APPROVED;
 import static akash.com.mobe.Helper.Config.SHARED_PREFERENCE;
@@ -72,7 +75,8 @@ public class ManagerActivity extends AppCompatActivity{
     private TextView tv_approve,tv_loading,tv_name,tv_noemp;
     private FloatingActionButton fab_setting;
     private ListView listView;
-    private ImageButton ib_happy,ib_conf,ib_relax,ib_disap,ib_sad,ib_angry;
+    private ImageButton ib_happy,ib_conf,ib_relax,ib_disap,ib_sad,ib_angry,ib_news;
+    private Snackbar snacky;
 
     private List<UserInfo> userInfos;
     private EmpListAdapter empListAdapter;
@@ -113,6 +117,7 @@ public class ManagerActivity extends AppCompatActivity{
         ib_happy = (ImageButton) this.findViewById(R.id.emo_happy);
         ib_relax = (ImageButton) this.findViewById(R.id.emo_relax);
         ib_sad = (ImageButton) this.findViewById(R.id.emo_sad);
+        ib_news = (ImageButton) this.findViewById(R.id.ib_news);
 
         listClicked = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
         emoOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.open);
@@ -122,11 +127,61 @@ public class ManagerActivity extends AppCompatActivity{
         empListAdapter = new EmpListAdapter(ManagerActivity.this,userInfos);
         listView.setAdapter(empListAdapter);
 
+        final SwipeDetector swipeDetector = new SwipeDetector();
+        coordinatorLayout.setOnTouchListener(swipeDetector);
+
+
+        snacky = Snackbar
+                .make(coordinatorLayout, "Swipe right to left to see Newsfeed.", Snackbar.LENGTH_LONG)
+                .setAction("OK", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        snacky.dismiss();
+                    }
+                });
+        snacky.show();
+
+
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
 
                 mainLayout.setVisibility(View.INVISIBLE);
+
+                ib_news.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, Newsfeed.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra(ACTIVITY_TAG,MANAGER_ACTIVITY);
+                        context.startActivity(intent);
+                        ((Activity) context).finish();
+                        ((Activity) context).overridePendingTransition(R.anim.enter, R.anim.exit);
+                        finish();
+                    }
+                });
+
+                coordinatorLayout.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("PrivateResource")
+                    @Override
+                    public void onClick(View v) {
+                        if(swipeDetector.swipeDetected()) {
+                            if(swipeDetector.getAction() == SwipeDetector.Action.RL) {
+                                Intent intent = new Intent(context, Newsfeed.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                intent.putExtra(ACTIVITY_TAG,MANAGER_ACTIVITY);
+                                context.startActivity(intent);
+                                ((Activity) context).finish();
+                                ((Activity) context).overridePendingTransition(R.anim.enter, R.anim.exit);
+                                finish();
+                            }else{
+                                Snackbar snackbar = Snackbar
+                                        .make(coordinatorLayout, "Swipe right to left to see Newsfeed.", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
+                        }
+                    }
+                });
 
                 fab_setting.setOnClickListener(new View.OnClickListener() {
                     @SuppressLint("PrivateResource")
@@ -259,7 +314,7 @@ public class ManagerActivity extends AppCompatActivity{
                             break;
                     }
                 }
-                if(userInfos == null){
+                if(userInfos.size() == 0){
 
                     SetReview(manager,employee,react);
 
@@ -321,11 +376,18 @@ public class ManagerActivity extends AppCompatActivity{
                         parseEmpData(s);
                         break;
                 }
-                if(userInfos == null){
+                if(userInfos.size() == 0){
 
                     EmployeeData(email);
 
                     System.out.println("GOING TO COLLECT EMPLOYEE DATA AGAIN ");
+                }else{
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv_noemp.setVisibility(View.INVISIBLE);
+                        }
+                    });
                 }
             }
 

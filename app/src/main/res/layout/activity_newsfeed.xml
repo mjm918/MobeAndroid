@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_news"
+    android:background="@color/colorPrimary"
+    tools:context="akash.com.mobe.Newsfeed">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/circular"
+            android:layout_height="@dimen/circular"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:mpb_progressStyle="circular"
+            app:mpb_indeterminateTint="@color/colorAccent"
+            app:mpb_progressTint = "@color/colorAccent"
+            android:visibility="gone"
+            style="@style/Widget.MaterialProgressBar.ProgressBar" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/loading"
+            android:text="@string/newsfeed"
+            android:textAlignment="center"
+            android:layout_below="@+id/progress"
+            android:textColor="@color/colorAccent"
+            android:layout_centerHorizontal="true"/>
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/viewTop"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewTop"
+            android:id="@+id/layout_hide">
+
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/tendp"
+                android:id="@+id/listView"/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

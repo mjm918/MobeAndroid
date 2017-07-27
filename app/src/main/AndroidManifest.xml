@@ -41,7 +41,8 @@
         <activity
             android:name=".SettingActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".Newsfeed"></activity>
     </application>
 
 </manifest>

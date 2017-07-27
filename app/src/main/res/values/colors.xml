@@ -4,4 +4,15 @@
     <color name="colorPrimaryDark">#111110</color>
     <color name="colorAccent">#D2A43A</color>
     <color name="text">#ffffff</color>
+
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+
+    <!--Emoji-->
+    <color name="happy">#66BB6A</color>
+    <color name="conf">#29B6F6</color>
+    <color name="satisf">#FF8A65</color>
+    <color name="dis">#F06292</color>
+    <color name="sad">#90A4AE</color>
+    <color name="angry">#e57373</color>
 </resources>

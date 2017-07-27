@@ -47,32 +47,51 @@
             android:layout_below="@+id/toolbar"
             android:id="@+id/layout_hide">
 
+            <ImageButton
+                android:layout_width="@dimen/fifdp"
+                android:layout_height="@dimen/fifdp"
+                android:background="@drawable/arrow"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ib_news"
+                android:contentDescription="@string/logo_desc"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_approve"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/btn"
+                android:layout_centerInParent="true"
+                android:text="@string/approve"
+                android:textColor="@color/text"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_noact"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/btn"
+                android:layout_centerInParent="true"
+                android:text="@string/noact"
+                android:textColor="@color/text"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_approve"
+                android:layout_above="@+id/tv_approve"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                app:srcCompat="@drawable/approve"
+                android:contentDescription="@string/logo_desc"/>
+
             <RelativeLayout
                 android:padding="@dimen/twdp"
                 android:id="@+id/layout_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:visibility="gone"
-                    android:id="@+id/tv_approve"
-                    android:layout_width="@dimen/logo_width"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/btn"
-                    android:layout_centerInParent="true"
-                    android:text="@string/approve"
-                    android:textColor="@color/text"/>
-
-                <ImageView
-                    android:visibility="gone"
-                    android:id="@+id/iv_approve"
-                    android:layout_above="@+id/tv_approve"
-                    android:layout_centerInParent="true"
-                    android:layout_width="@dimen/logo_width"
-                    android:layout_height="@dimen/logo_height"
-                    app:srcCompat="@drawable/approve"
-                    android:contentDescription="@string/logo_desc"/>
 
                 <TextView
                     android:id="@+id/tv_hello"
@@ -120,14 +139,113 @@
 
             </RelativeLayout>
 
-            <android.support.design.widget.FloatingActionButton
+            <RelativeLayout
+                android:visibility="gone"
+                android:background="#80000000"
+                android:id="@+id/layout_emo"
+                android:padding="@dimen/twdp"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textAlignment="center"
+                    android:layout_below="@+id/garbage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/twdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/btnLogin"
+                    android:text="@string/share"
+                    android:fontFamily="sans-serif-smallcaps"/>
+
+                <RelativeLayout
+                    android:id="@+id/garbage"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/emo_happy"
+                        android:background="@drawable/happy"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:contentDescription="@string/logo_desc" />
+                    <ImageButton
+                        android:layout_marginStart="@dimen/twdp"
+                        android:id="@+id/emo_conf"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:layout_toEndOf="@+id/emo_happy"
+                        android:background="@drawable/confident"
+                        android:contentDescription="@string/logo_desc" />
+                    <ImageButton
+                        android:layout_marginStart="@dimen/twdp"
+                        android:id="@+id/emo_relax"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:layout_toEndOf="@id/emo_conf"
+                        android:background="@drawable/relax"
+                        android:contentDescription="@string/logo_desc" />
+                    <ImageButton
+                        android:layout_marginTop="@dimen/twdp"
+                        android:id="@+id/emo_dis"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:layout_below="@+id/emo_happy"
+                        android:background="@drawable/disappointed"
+                        android:contentDescription="@string/logo_desc" />
+                    <ImageButton
+                        android:layout_marginStart="@dimen/twdp"
+                        android:layout_marginTop="@dimen/twdp"
+                        android:id="@+id/emo_sad"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:layout_below="@+id/emo_conf"
+                        android:layout_toEndOf="@+id/emo_dis"
+                        android:background="@drawable/sad"
+                        android:contentDescription="@string/logo_desc" />
+                    <ImageButton
+                        android:layout_marginStart="@dimen/twdp"
+                        android:layout_marginTop="@dimen/twdp"
+                        android:id="@+id/emo_angry"
+                        android:layout_width="@dimen/fifdp"
+                        android:layout_height="@dimen/fifdp"
+                        android:layout_below="@+id/emo_relax"
+                        android:layout_toEndOf="@+id/emo_sad"
+                        android:background="@drawable/angry"
+                        android:contentDescription="@string/logo_desc" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_marginBottom="@dimen/tendp"
-                android:id="@+id/fab_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:src="@android:drawable/ic_menu_preferences" />
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_marginEnd="@dimen/fivdp"
+                    android:id="@+id/fab_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:src="@android:drawable/ic_menu_preferences" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_marginStart="@dimen/fivdp"
+                    android:id="@+id/fab_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/fab_setting"
+                    android:src="@android:drawable/ic_menu_add" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
 

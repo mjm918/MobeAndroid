@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/list_feedback"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/tendp">
+
+    <RelativeLayout
+        android:baselineAligned="false"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/fifdp"
+            android:layout_height="@dimen/fifdp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/iv_emo"
+            android:contentDescription="@string/logo_desc"/>
+
+        <TextView
+            android:id="@+id/tv_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="@dimen/btn"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_emo"/>
+        <TextView
+            android:id="@+id/tv_list_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="@dimen/btn"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_list_name"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

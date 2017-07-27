@@ -14,6 +14,9 @@ public class Config {
     public static final String API_SVDEPT_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/saveDept.php";
     public static final String API_EMPDATA_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/empData.php";
     public static final String API_VOTE_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/vote.php";
+    public static final String API_FEEDBACK_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/feedback.php";
+    public static final String API_SHARE_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/share.php";
+    public static final String API_NEWSFEED_LINK = "https://devjulfikar.000webhostapp.com/MobileApi/newsfeed.php";
     public static final String MANAGER_ACTIVITY = "ManagerActivity";
     public static final String EMPLOYEE_ACTIVITY = "EmployeeActivity";
     public static final String ACTIVITY_TAG = "GoingToActivity";
@@ -21,6 +24,7 @@ public class Config {
     public static final String API_USER_INFO = "info";
     public static final String API_EMP_DATA = "emp";
     public static final String API_DATE = "date";
+    public static final String API_TIME = "time";
     public static final String API_EMO = "emo";
     public static final String API_FNAME = "fname";
     public static final String API_LNAME = "lname";

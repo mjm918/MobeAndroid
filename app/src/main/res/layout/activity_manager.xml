@@ -46,6 +46,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageButton
+                android:layout_width="@dimen/fifdp"
+                android:layout_height="@dimen/fifdp"
+                android:background="@drawable/arrow"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ib_news"
+                android:contentDescription="@string/logo_desc"/>
+
             <TextView
                 android:visibility="gone"
                 android:id="@+id/tv_approve"

@@ -20,8 +20,11 @@
     <string name="et_dob">Date of Birth</string>
     <string name="manager">Yes, I am a Manager</string>
     <string name="approve">Your account hasn\'t been approved yet. Please wait for the response from the office.\n Thank You.</string>
+    <string name="noact">No activity found on your performance. Please come back later to see your report.\n Thank You.</string>
     <string name="noemp">No Employee found under your department. Please set your department name from settings if you have not set your department yet.\n Thank You.</string>
     <string name="setup">Please wait\n While we are setting up your profile</string>
+    <string name="newsfeed">Please wait\n While we are loading your newsfeed</string>
+    <string name="empty">Nothing to show. Please come back later</string>
     <string name="save">Save</string>
     <string name="verify">Verify</string>
     <string name="logout">Logout</string>
@@ -37,5 +40,6 @@
     <string name="dept">Please set your department</string>
     <string name="pass">Change Password</string>
     <string name="empday">Here is your performance so far!</string>
+    <string name="share">Share your mood with Emoji. Let your colleagues to see.</string>
 
 </resources>
